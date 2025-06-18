@@ -68,19 +68,21 @@
 
 /* ---- ESTILO GENERAL ---- */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
   margin: 0;
   margin-top: 70px;
   padding: 20px;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  color: #333;
 }
 
 h1 {
+  font-size: 2em;
   color: #0077cc;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 p {
@@ -88,7 +90,7 @@ p {
   margin-bottom: 30px;
 }
 
-/* ---- TARJETAS DE CATEGORÍA (INDEX) ---- */
+/* ---- TARJETAS DE CATEGORÍA (index.html) ---- */
 .categoria-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -118,16 +120,53 @@ p {
   margin-bottom: 10px;
 }
 
-/* ---- TARJETAS DE PROBLEMAS (OFICINA, PRODUCCIÓN, ETC) ---- */
+/* ---- TARJETAS DE PROBLEMAS ---- */
 .problema {
   background: white;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 30px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.problema:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .problema h2 {
   margin-top: 0;
-  font-size: 1.2em;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- BOTÓN FLOTANTE SOLO EN MÓVILES ---- */
+.btn-flotante {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.btn-flotante:hover {
+  background-color: #005fa3;
+}
+
+@media (max-width: 768px) {
+  .btn-flotante {
+    display: block;
+  }
 }
